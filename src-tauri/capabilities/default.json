@@ -1,0 +1,27 @@
+{
+  "$schema": "../gen/schemas/desktop-schema.json",
+  "identifier": "default",
+  "description": "Capability for the main window",
+  "windows": ["main"],
+  "permissions": [
+    "core:default",
+    "opener:default",
+    "shell:allow-open",
+    {
+      "identifier": "shell:allow-execute",
+      "allow": [
+        { "name": "networksetup", "cmd": "networksetup", "args": true, "sidecar": false },
+        { "name": "netsh", "cmd": "netsh", "args": true, "sidecar": false },
+        { "name": "powershell", "cmd": "powershell", "args": true, "sidecar": false },
+        { "name": "open", "cmd": "open", "args": true, "sidecar": false },
+        { "name": "getmac", "cmd": "getmac", "args": true, "sidecar": false }
+      ]
+    },
+    "notification:default",
+    "dialog:default",
+    "autostart:allow-enable",
+    "autostart:allow-disable",
+    "autostart:allow-is-enabled",
+    "os:default"
+  ]
+}
